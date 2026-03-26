@@ -1,0 +1,6 @@
+{
+    "Data Analyst": ["Python", "SQL", "Excel", "Power BI", "Statistics"],
+    "Web Developer": ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+    "Software Engineer": ["Python", "Java", "Data Structures", "Algorithms", "Git"],
+    "Machine Learning Engineer": ["Python", "Machine Learning", "Statistics", "Deep Learning", "Pandas"]
+}
