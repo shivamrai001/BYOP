@@ -1,4 +1,4 @@
-# 🚀 SkillGap Analyzer – Resume vs Job Role Matcher
+# 🚀 AI-Based Skill Gap Analyzer using NLP
 
 ## 📌 Overview
 
