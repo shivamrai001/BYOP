@@ -2,7 +2,10 @@
 
 ## 📌 Overview
 
+This project uses NLP techniques such as TF-IDF vectorization and cosine similarity to analyze and compare skill sets.
+
 SkillGap Analyzer is a simple yet effective tool that helps students and job seekers identify the gap between their current skills and the skills required for a desired job role.
+
 
 It compares user-input skills with predefined job role requirements and provides:
 
