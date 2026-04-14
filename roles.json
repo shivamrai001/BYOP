@@ -1,6 +1,44 @@
 {
-    "Data Analyst": ["Python", "SQL", "Excel", "Power BI", "Statistics"],
-    "Web Developer": ["HTML", "CSS", "JavaScript", "React", "Node.js"],
-    "Software Engineer": ["Python", "Java", "Data Structures", "Algorithms", "Git"],
-    "Machine Learning Engineer": ["Python", "Machine Learning", "Statistics", "Deep Learning", "Pandas"]
+  "Data Scientist": [
+    "Python",
+    "Machine Learning",
+    "Statistics",
+    "Pandas",
+    "NumPy",
+    "Data Visualization",
+    "SQL"
+  ],
+  "Web Developer": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Git"
+  ],
+  "AI Engineer": [
+    "Python",
+    "Machine Learning",
+    "Deep Learning",
+    "TensorFlow",
+    "PyTorch",
+    "NLP"
+  ],
+  "Software Developer": [
+    "Python",
+    "Java",
+    "C++",
+    "Data Structures",
+    "Algorithms",
+    "Git",
+    "Problem Solving"
+  ],
+  "Data Analyst": [
+    "Excel",
+    "SQL",
+    "Python",
+    "Pandas",
+    "Data Visualization",
+    "Statistics"
+  ]
 }
