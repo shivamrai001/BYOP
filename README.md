@@ -1,155 +1,99 @@
-# 🚀 AI-Based Skill Gap Analyzer using NLP
+`# 🌾 Crop Yield Prediction using Basic AI/ML
 
-## 📌 Overview
+## 📌 Project Overview
+This project demonstrates a simple Artificial Intelligence / Machine Learning model that predicts crop yield based on key agricultural factors such as rainfall, fertilizer usage, and temperature.
 
-This project uses NLP techniques such as TF-IDF vectorization and cosine similarity to analyze and compare skill sets.
-
-SkillGap Analyzer is a simple yet effective tool that helps students and job seekers identify the gap between their current skills and the skills required for a desired job role.
-
-
-It compares user-input skills with predefined job role requirements and provides:
-
-* Matched skills
-* Missing skills
-* Match percentage
-* Improvement suggestions
+It is designed as a beginner-friendly project to understand how machine learning can be applied to real-world problems in agriculture.
 
 ---
 
-## 🎯 Problem Statement
-
-Many students apply for jobs without knowing whether their skills match industry requirements. This leads to confusion, lack of direction, and missed opportunities.
-
-This project solves that problem by clearly showing what skills are missing and how to improve.
-
----
-
-## 💡 Solution
-
-The system:
-
-1. Takes user skills as input
-2. Allows selection of a target job role
-3. Compares user skills with required skills
-4. Calculates a match score
-5. Suggests skills to improve
+## 🎯 Objective
+- To predict crop yield using basic input features
+- To understand the implementation of Linear Regression
+- To visualize relationships between agricultural factors and yield
 
 ---
 
-## ⚙️ Features
-
-* ✅ Skill input (comma-separated)
-* ✅ Multiple job roles support
-* ✅ Skill matching system
-* ✅ Match percentage calculation
-* ✅ Missing skills identification
-* ✅ Simple and user-friendly interface
+## 🧠 Technologies Used
+- Python
+- Pandas (data handling)
+- Matplotlib (data visualization)
+- Scikit-learn (ML model)
 
 ---
 
-## 🛠️ Tech Stack
+## 📊 Dataset Description
+The dataset is self-generated and contains the following features:
 
-* Python
-* JSON (for storing job roles)
-
----
-
-## 📂 Project Structure
-
-```
-skillgap-analyzer/
-│── main.py
-│── roles.json
-│── README.md
-│── report.pdf
-│── screenshots/
-```
+| Feature       | Description                          |
+|--------------|--------------------------------------|
+| Rainfall     | Amount of rainfall (mm)              |
+| Fertilizer   | Fertilizer used (kg/hectare)         |
+| Temperature  | Average temperature (°C)             |
+| Yield        | Crop yield (predicted output)        |
 
 ---
 
-## ▶️ How to Run
+## ⚙️ How the Model Works
+1. Load dataset from CSV file
+2. Split data into training and testing sets
+3. Train a Linear Regression model
+4. Predict crop yield based on inputs
+5. Visualize data using scatter plots
 
-### Step 1: Clone the repository
+---
 
-```
-git clone https://github.com/your-username/skillgap-analyzer.git
-```
+## 📈 Graphs Included
+- Rainfall vs Crop Yield
+- Fertilizer vs Crop Yield
 
-### Step 2: Navigate to project folder
+These graphs help understand how each factor affects production.
 
-```
-cd skillgap-analyzer
-```
+---
 
-### Step 3: Run the program
+## ▶️ How to Run the Project
 
-```
+### Step 1: Install Dependencies
+pip install -r requirements.txt
+### Step 2: Run the Program
 python main.py
-```
 
 ---
 
-## 📊 Example Output
+### 🧪 Sample Input
+Enter Rainfall: 120
+Enter Fertilizer: 50
+Enter Temperature: 25
 
-```
-Enter your skills: Python, Excel
+---
+##  📤 Sample Output
+Predicted Crop Yield: 85.32
+---
 
-Target Role: Data Analyst
+### 📏 Model Evaluation (Important for Understanding)
 
-Matched Skills: Python, Excel  
-Missing Skills: SQL, Power BI, Statistics  
-Match Score: 40%
+The model performance can be measured using:
 
-Suggestion:
-Focus on learning: SQL, Power BI, Statistics
-```
+Mean Absolute Error (MAE)
+R² Score (Accuracy indicator)
+
+These help in checking how well the model predicts values.
 
 ---
 
-## 🧠 How It Works
+###  🎓 Learning Outcomes
+Understanding of basic AI/ML workflow
+Knowledge of Linear Regression
+Data preprocessing and visualization
+Real-world problem-solving using ML
 
-* Skills are converted to lowercase for accurate comparison
-* Matching is done using list comparison
-* Score is calculated using:
-
-```
-Match Score = (Matched Skills / Total Required Skills) × 100
-```
 
 ---
 
-## ⚠️ Limitations
-
-* Manual skill input (no resume upload yet)
-* Basic string matching (no advanced NLP)
-* Limited job roles
-
----
-
-## 🔮 Future Improvements
-
-* Resume upload (PDF parsing)
-* AI-based skill suggestions
-* Web interface (Flask / Streamlit)
-* Integration with job portals
+###  🚀 Future Scope
+Use real agricultural datasets
+Add more features (soil type, humidity, etc.)
+Improve accuracy using advanced models
+Develop GUI or web application
 
 ---
-
-## 📚 Learning Outcomes
-
-* Applied Python to solve a real-world problem
-* Learned data handling using JSON
-* Improved logical thinking and problem-solving skills
-* Understood importance of skill-based analysis
-
----
-
-## 👨‍💻 Author
-
-Shivam Rai (25BAI11241)
-
----
-
-## ⭐ Acknowledgement
-
-This project was developed as part of the **BYOP (Bring Your Own Project)** initiative to apply programming concepts to real-world problems.
