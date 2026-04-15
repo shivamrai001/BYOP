@@ -1,0 +1,108 @@
+
+---
+                            👨‍💻 Author
+
+Name: Shivam Rai
+REG: 25BAI11241
+Course:FUNADAMENTAL IN AI ML
+College: VIT Bhopal Unversity
+
+```text
+                     CROP YIELD PREDICTION USING AI/ML
+
+1. INTRODUCTION
+Agriculture plays a vital role in the economy, and predicting crop yield is important for planning and decision-making. This project uses basic machine learning techniques to estimate crop yield based on environmental and input factors.
+
+---
+
+2. OBJECTIVE
+The main objectives of this project are:
+- To develop a simple prediction model using AI/ML
+- To understand the relationship between rainfall, fertilizer, and crop yield
+- To apply Linear Regression in a real-world scenario
+
+---
+
+3. METHODOLOGY
+
+Step 1: Data Collection  
+A small dataset was self-generated with realistic values for rainfall, fertilizer, temperature, and crop yield.
+
+Step 2: Data Preprocessing  
+The dataset was loaded using pandas and divided into input (features) and output (target).
+
+Step 3: Model Selection  
+Linear Regression was used because it is simple and suitable for beginners.
+
+Step 4: Model Training  
+The dataset was split into training and testing data, and the model was trained using the training data.
+
+Step 5: Prediction  
+The model predicts crop yield based on user input values.
+
+---
+
+4. DATASET DESCRIPTION
+
+The dataset contains the following attributes:
+- Rainfall (mm)
+- Fertilizer (kg/hectare)
+- Temperature (°C)
+- Crop Yield
+
+The dataset consists of 40 records and is stored in CSV format.
+
+---
+
+5. MODEL USED: LINEAR REGRESSION
+
+Linear Regression is a supervised learning algorithm used to predict continuous values.  
+It finds a relationship between independent variables (inputs) and dependent variable (output).
+
+Advantages:
+- Simple to understand
+- Easy to implement
+- Works well for small datasets
+
+---
+
+6. RESULTS
+
+- The model successfully predicts crop yield based on input values
+- Graphs show a positive relationship between rainfall, fertilizer, and yield
+- Predictions are reasonably accurate for a basic model
+
+---
+
+7. LIMITATIONS
+
+- Dataset is small and self-generated
+- Accuracy is limited
+- Does not include real-world complexities like soil quality, pests, etc.
+
+---
+
+8. CONCLUSION
+
+This project demonstrates how basic AI/ML techniques can be used to solve real-world problems. Even simple models like Linear Regression can provide useful insights in agriculture.
+
+---
+
+9. FUTURE SCOPE
+
+- Use real agricultural datasets
+- Apply advanced ML models
+- Add more input features
+- Develop a web or mobile application
+
+---
+
+10. REFERENCES
+
+- Scikit-learn documentation
+- Python official documentation
+- Basic Machine Learning tutorials
+
+---
+
+(End of Report)
