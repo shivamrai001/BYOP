@@ -1,88 +1,61 @@
-import json
-from skill_gap_model import calculate_similarity, find_missing_skills, suggest_learning_path
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, r2_score
 
 
-def load_roles(filename="roles.json"):
-    try:
-        with open(filename, "r", encoding="utf-8") as file:
-            return json.load(file)
-    except FileNotFoundError:
-        print("Error: roles.json file not found.")
-        return {}
-    except json.JSONDecodeError:
-        print("Error: roles.json contains invalid JSON.")
-        return {}
+# Load dataset
+data = pd.read_csv('data.csv')
 
+# Features and target
+X = data[['Rainfall', 'Fertilizer', 'Temperature']]
+y = data['Yield']
 
-def display_roles(roles):
-    print("\nAvailable Job Roles:")
-    for index, role in enumerate(roles.keys(), start=1):
-        print(f"{index}. {role}")
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
+# Train model
+model = LinearRegression()
+model.fit(X_train, y_train)
 
-def get_role_choice(roles):
-    role_names = list(roles.keys())
-    choice = input("\nEnter the target role name: ").strip()
+# Prediction
+predictions = model.predict(X_test)
 
-    for role in role_names:
-        if choice.lower() == role.lower():
-            return role
+# Print sample predictions
+print("Sample Predictions:")
+for i in range(5):
+    print(f"Predicted: {predictions[i]:.2f}, Actual: {y_test.iloc[i]:.2f}")
 
-    print("Invalid role selected.")
-    return None
+# Graphs
+plt.scatter(data['Rainfall'], data['Yield'])
+plt.xlabel("Rainfall")
+plt.ylabel("Yield")
+plt.title("Rainfall vs Yield")
+plt.show()
 
+plt.scatter(data['Fertilizer'], data['Yield'])
+plt.xlabel("Fertilizer")
+plt.ylabel("Yield")
+plt.title("Fertilizer vs Yield")
+plt.show()
 
-def get_user_skills():
-    user_input = input("\nEnter your skills separated by commas: ").strip()
+# User input
+rain = float(input("Enter Rainfall: "))
+fert = float(input("Enter Fertilizer: "))
+temp = float(input("Enter Temperature: "))
 
-    if not user_input:
-        return []
+result = model.predict([[rain, fert, temp]])
+print(f"Predicted Crop Yield: {result[0]:.2f}")
+# Evaluate model
+mae = mean_absolute_error(y_test, predictions)
+r2 = r2_score(y_test, predictions)
 
-    return [skill.strip() for skill in user_input.split(",") if skill.strip()]
+print("\nModel Evaluation:")
+print(f"Mean Absolute Error: {mae:.2f}")
+print(f"R2 Score: {r2:.2f}")
 
-
-def main():
-    print("===== AI-Based Skill Gap Analyzer =====")
-
-    roles = load_roles()
-    if not roles:
-        return
-
-    display_roles(roles)
-
-    selected_role = get_role_choice(roles)
-    if selected_role is None:
-        return
-
-    user_skills = get_user_skills()
-    if not user_skills:
-        print("No skills entered. Please run the program again.")
-        return
-
-    role_skills = roles[selected_role]
-
-    match_score = calculate_similarity(user_skills, role_skills)
-    missing_skills = find_missing_skills(user_skills, role_skills)
-    recommendations = suggest_learning_path(missing_skills)
-
-    print("\n===== ANALYSIS RESULT =====")
-    print(f"Target Role: {selected_role}")
-    print(f"Your Skills: {', '.join(user_skills)}")
-    print(f"Required Skills: {', '.join(role_skills)}")
-    print(f"Match Score: {match_score}%")
-
-    if missing_skills:
-        print("\nMissing Skills:")
-        for skill in missing_skills:
-            print(f"- {skill}")
-    else:
-        print("\nExcellent! You already match all the major skills for this role.")
-
-    if recommendations:
-        print("\nRecommended Learning Path:")
-        for item in recommendations:
-            print(f"- {item}")
-
-
-if __name__ == "__main__":
-    main()
+# Show coefficients
+print("\nFeature Importance:")
+for name, coef in zip(['Rainfall', 'Fertilizer', 'Temperature'], model.coef_):
+    print(f"{name}: {coef:.2f}")
